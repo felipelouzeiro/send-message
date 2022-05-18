@@ -1,9 +1,9 @@
 function sendMessage(element) {
-  let number = prompt("Digite o número:")
   let contentMessage = element.firstElementChild.innerText
-  let link = `https://api.whatsapp.com/send?phone=55${number}&text=${contentMessage}`;
+  let number = prompt("Digite o número:")
 
-  window.open(link);
+  if (number && contentMessage) {
+    let link = `https://api.whatsapp.com/send?phone=55${number}&text=${contentMessage}`;
+    window.open(link);
+  } else null;
 }
-
-module.export = sendMessage;
